@@ -302,6 +302,11 @@ endif(WIN32)]]
 #############
 #[[ # on a Linux platform (tested on Ubuntu with g++-4.8)
 if(LINUX)
+    find_package(Lua REQUIRED)
+    find_package(Freetype REQUIRED)
+    find_package(JPEG REQUIRED)
+    find_package(GIF REQUIRED)
+    find_package(TIFF REQUIRED)
     find_package(X11)
     if(X11_FOUND)
 	    target_link_libraries(dokun-ui  ${x11_src})
@@ -338,6 +343,21 @@ INSTALL(TARGETS libdokun-ui
 INSTALL(FILES include/dokun_ui.hpp
               include/image.hpp
               include/file.hpp
+              include/edit.hpp
+              include/math.hpp
+              include/process.hpp
+              include/progressbar.hpp
+              include/build.hpp
+              include/engine.hpp
+              include/slider.hpp
+              include/scrollbar.hpp
+              include/list.hpp
+              include/menubar.hpp
+              include/combo.hpp
+              include/tab.hpp
+              include/console.hpp
+              include/plugin.hpp
+              include/browser.hpp
               include/box.hpp
               include/linux_header.hpp
               include/platform.hpp
